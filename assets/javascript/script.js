@@ -85,7 +85,7 @@ function generatePassword() {
   for (let ii = 0; ii <passwordLength; ii++) {
     let randomList = fetchRandom(optionsSelected);
     let randomCharacter = fetchRandom(randomList);
-    generatePassword += randomCharacter; 
+    generatedPassword += randomCharacter; 
   };
 
   return generatedPassword;
