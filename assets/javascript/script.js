@@ -2,26 +2,6 @@
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
 
-
-// copied this function code from below and brought it up here
-function randomInteger(min, max) {
-  if (!max) {
-    max = min;
-    min = 0;
-  };
-  let random = Math.random();
-  return Math.floor(min * (1 - random) + random * max)
-};
-// got the above equation from youtubing/google
-
-function fetchRandom(list) {
-  return list[randomInteger(list.length)];
-};
-
-
-
-
-// i've written this code
 // need to write generatePassword function
 // have found on google parseInt turns a string/text input into a number value under the right parameters
 // if you get it wrong it produces NaN
@@ -32,7 +12,7 @@ function generatePassword() {
 
 // isNaN method returns true if value is NaN data type, useful for getting rid of string inputs
   if (isNaN(passwordLength)) {
-    alert("Try and actual number please :)");
+    alert("Try an actual number please :)");
     return;
   };
 
@@ -48,10 +28,12 @@ function generatePassword() {
   let userNumbers = confirm("Would you like to include numbers?");
   let userSymbols = confirm("Would you like to include symbols?");
 
+// these are the available arrays to pull from
   let LowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   let UpperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   let Numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
   let Symbols = ["!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", ']', "`", "{", "|", "}", "~"];
+// after revising i realise i could have used .split to simplify these arrays
   
 // insert options selected into this empty array
   let optionsSelected = [];
@@ -73,6 +55,7 @@ function generatePassword() {
     optionsSelected.push(Symbols);
   };
 
+// the below if statement makes it fool proof if all cancels are selected, making the strongest password
   if (optionsSelected.length === 0) {
     optionsSelected.push(LowerCase, UpperCase, Numbers, Symbols);
   };
@@ -80,16 +63,36 @@ function generatePassword() {
 // checking if works
 // console.log(optionsSelected)
 
+// initialise the string
   let generatedPassword = "";
 
+// 
   for (let ii = 0; ii <passwordLength; ii++) {
     let randomList = fetchRandom(optionsSelected);
     let randomCharacter = fetchRandom(randomList);
     generatedPassword += randomCharacter; 
   };
 
+// was able to discover += joins the string
+
   return generatedPassword;
 
+};
+
+// these 2 functions are the parts of the code where i need to grasp a firmer understanding
+// whilst i have gotten the password generator to work i realise how much revision i need
+
+function randomInteger(min, max) {
+  if (!max) {
+    max = min; min = 0;
+  };
+  let random = Math.random();
+  return Math.floor(min * (1 - random) + random * max)
+};
+// got the above equation from youtubing/google
+
+function fetchRandom(list) {
+  return list[randomInteger(list.length)];
 };
 
 // This code is already here
@@ -100,7 +103,7 @@ function writePassword() {
 
   passwordText.value = password;
 
-}
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
