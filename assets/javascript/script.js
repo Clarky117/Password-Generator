@@ -2,6 +2,8 @@
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
 
+
+
 // need to write generatePassword function
 // have found on google parseInt turns a string/text input into a number value under the right parameters
 // if you get it wrong it produces NaN
@@ -89,11 +91,13 @@ function randomInteger(min, max) {
   let random = Math.random();
   return Math.floor(min * (1 - random) + random * max)
 };
-// got the above equation from youtubing/google
+// help understanding the above function i found helpful https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
 
 function fetchRandom(list) {
   return list[randomInteger(list.length)];
 };
+
+
 
 // This code is already here
 // Write password to the #password input
