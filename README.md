@@ -35,7 +35,7 @@ It is important to run your code and check it is running how you want it to.<br>
 
 ## Things i want to work on
 
-After tinkering with this for a few days after having got the code to work, i have identified a few areas i would like to study further. These include but are not limited to, for loops and when to use them, functions and how to simplify them, and using math methods/arithmetic to create to desired logic.<br><br>
+After tinkering with this for a few days after having got the code to work, i have identified a few areas i would like to study further. These include but are not limited to, for loops and when to use them, functions and how to simplify them, and using math methods/arithmetic to create the desired logic.<br><br>
 
 ## Links to Repository and Deployed Site
 
