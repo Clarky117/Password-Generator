@@ -1,6 +1,6 @@
 # Password-Generator
 
-In week 3 of the UWA coding bootcamp we have been asked to build a random password generator around the right criteria using Javascript after being given the HTML and CSS framework.<br><br>
+Built a random password generator using Javascript after being given the HTML and CSS framework.<br><br>
 
 ## Key Points
 
